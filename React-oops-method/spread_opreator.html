@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spread_opreator</title>
+</head>
+<body>
+    <!--
+    The JavaScript spread operator (...) allows us to quickly copy 
+    all or part of an existing array or object into another array or object.
+    -->
+
+    <script>
+        let number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let number2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        let number3 = [...number, ...number2]; // combine object
+        document.write(number3 + "<br>") 
+
+        const numbers = [1, 2, 3, 4, 5, 6];
+        const [first, second, ...rest] = numbers;
+
+        document.write(`${first}<br>`);
+        document.write(`${second}<br>`);
+        document.write(`${rest}<br>`);
+
+        const myVehicle1 = {
+            brand : 'ford',
+            model : 'mustang',
+            color : 'red'
+        }
+        const myVehicle2 = {
+            type : 'Car',
+            Year : '2021',
+            color : 'yellow'
+        }
+
+        const myUpdateVehicle = {...myVehicle1, ...myVehicle2}
+        // singal object
+        document.write(myUpdateVehicle.brand + "<br>");
+        document.write(myUpdateVehicle.model + "<br>");
+        document.write(myUpdateVehicle.type + "<br>");
+        document.write(myUpdateVehicle.Year + "<br>");
+
+        // make loop for single object    FOR IN
+        for (var property in myUpdateVehicle) // loop for object
+        {
+            document.write(property + ":" + myUpdateVehicle[property]+ "<br>");
+        }
+
+        //make loop arr object  by     FOR  OF
+
+        const arr_object = 
+        [
+            { id:1, name:"shyam kumar",salary:40000},
+            { id:2,name:"John Deo",salary:50000},
+            { id:3,name:"Raj Nagar",salary:60000}
+        ];
+        for (data  of arr_object) 
+        {
+            document.write(data.id +" "+ data.name + " "+ data.salary + "<br>");
+        }
+
+        //make loop arr object  by   map
+        
+        arr_object.map((value,index,arr)=>{document.write(value.id+"="+value.name+"/"+value.salary+"<br>")});
+
+
+    </script>
+</body>
+</html>

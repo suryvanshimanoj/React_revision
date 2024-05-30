@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spread_opreator-task</title>
+</head>
+<body>
+    <script>
+      let number01 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      let number02 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      let number03 = [...number01, ...number02]; //combine object
+      document.write(number03 + "<br>");
+      
+
+      const numbers = [1, 2, 3, 4, 5, 6];
+      const [first, second,...rest]=numbers;
+
+      document.write(`${first}<br>`);
+      document.write(`${second}<br>`);
+      document.write(`${rest}<br>`);
+
+
+      const myVehicle = {
+         brand : 'Creata',
+         modal : '2023',
+         color: 'red'
+      }
+      const myVehicle2 = {
+         type :'Car',
+         Licence_no :'2024TOPS',
+         color :'black'
+      }
+
+      const myUpdateVehicle01 = {...myVehicle, ...myVehicle2}; //combine object
+      // single object
+
+      document.write(myUpdateVehicle01.brand + "<br>");
+      document.write(myUpdateVehicle01.modal + "<br>");
+      document.write(myUpdateVehicle01.type + "<br>");
+      document.write(myUpdateVehicle01.color + "<br>");
+
+      // make loop for single object    FOR IN
+
+      for (const property in myUpdateVehicle01) 
+      {
+        document.write(property + " :" + myUpdateVehicle01[property]+"<br>")
+      }
+
+      //make loop arr object  by     FOR  OF
+
+      Object = [
+        {id :10, name :"shyam kumar", salary :40000},
+        {id :20, name :"Ravi kumar", salary :50000},
+        {id :30, name :"Raj Nagar", salary :60000}
+      ];
+      for ( data of Object) 
+      {
+        document.write(data.id+" "+data.name+" "+data.salary+"<br>");
+      }
+
+      //make loop arr object  by  MAP
+
+      Object.map((value,index,arr)=>{document.write(value.id+" "+value.name+" "+value.salary+"<br>")});
+    </script>
+</body>
+</html>
